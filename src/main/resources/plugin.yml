@@ -1,0 +1,9 @@
+name: Leavidence
+version: '${project.version}'
+main: io.wdsj.leavidence.Leavidence
+api-version: '1.20'
+load: STARTUP
+author: HaHaWTH
+description: Prevent Leaves bots break blocks in the residence without permission.
+depend:
+  - Residence
