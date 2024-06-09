@@ -13,13 +13,6 @@ public final class Leavidence extends JavaPlugin {
     @Override
     public void onEnable() {
         logger = getLogger();
-        try {
-            Class.forName("top.leavesmc.leaves.LeavesConfig");
-        } catch (ClassNotFoundException e) {
-            logger.warning("This plugin only works on Leaves server! Disabling..");
-            getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
         Metrics metrics = new Metrics(this, 21521);
         getServer().getPluginManager().registerEvents(new BotListener(), this);
     }
