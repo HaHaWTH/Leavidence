@@ -71,9 +71,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>top.leavesmc.leaves</groupId>
+            <groupId>org.leavesmc.leaves</groupId>
             <artifactId>leaves-api</artifactId>
-            <version>1.20.4-R0.1-SNAPSHOT</version>
+            <version>1.20.6-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
