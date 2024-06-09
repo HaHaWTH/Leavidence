@@ -61,7 +61,7 @@
     <repositories>
         <repository>
             <id>leaves-repo</id>
-            <url>https://repo.leavesmc.top/snapshots/</url>
+            <url>https://repo.leavesmc.org/snapshots/</url>
         </repository>
         <repository>
             <id>aliyun</id>
