@@ -6,7 +6,7 @@
 
     <groupId>io.wdsj</groupId>
     <artifactId>Leavidence</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>Leavidence</name>
@@ -62,6 +62,10 @@
         <repository>
             <id>leaves-repo</id>
             <url>https://repo.leavesmc.org/snapshots/</url>
+        </repository>
+        <repository>
+            <id>paper-repo</id>
+            <url>https://repo.papermc.io/maven-public/</url>
         </repository>
         <repository>
             <id>aliyun</id>
