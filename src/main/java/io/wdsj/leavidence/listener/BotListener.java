@@ -8,7 +8,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import top.leavesmc.leaves.event.bot.BotActionEvent;
+import org.leavesmc.leaves.event.bot.BotActionEvent;
 
 import java.util.Locale;
 
