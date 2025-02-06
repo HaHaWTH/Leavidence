@@ -41,8 +41,16 @@ public class BotActionListener implements Listener {
                 if (block != null) {
                     ClaimedResidence residence = ResidenceApi.getResidenceManager().getByLoc(block.getLocation());
                     if (residence != null) {
+                        ItemStack stackInHand = bot.getInventory().getItemInMainHand().isEmpty() ? bot.getInventory().getItemInOffHand() : bot.getInventory().getItemInMainHand();
+                        Material itemInHand = stackInHand.getType();
                         var resPlayer = ResidenceApi.getPlayerManager().getResidencePlayer(bot.getRealName());
-                        if (resPlayer != null && !resPlayer.canPlaceBlock(block, false)) {
+                        if (itemInHand.isBlock()) {
+                            if (resPlayer != null && !resPlayer.canPlaceBlock(block, false)) {
+                                event.hardCancel();
+                            }
+                            return;
+                        }
+                        if (resPlayer != null && residence.getPermissions().playerHas(resPlayer, Flags.use, false)) {
                             event.hardCancel();
                         }
                     }
@@ -91,6 +99,9 @@ public class BotActionListener implements Listener {
                                     }
                                 }
                                 default -> {
+                                    if (!residence.getPermissions().playerHas(resPlayer, Flags.use, false)) {
+                                        event.hardCancel();
+                                    }
                                 }
                             }
                         }
