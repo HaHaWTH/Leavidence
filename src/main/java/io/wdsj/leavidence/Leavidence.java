@@ -1,6 +1,6 @@
 package io.wdsj.leavidence;
 
-import io.wdsj.leavidence.listener.BotListener;
+import io.wdsj.leavidence.listener.BotActionListener;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,7 +14,7 @@ public final class Leavidence extends JavaPlugin {
     public void onEnable() {
         logger = getLogger();
         Metrics metrics = new Metrics(this, 21521);
-        getServer().getPluginManager().registerEvents(new BotListener(), this);
+        getServer().getPluginManager().registerEvents(new BotActionListener(), this);
     }
 
     @Override

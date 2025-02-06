@@ -30,7 +30,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.2</version>
+                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -65,11 +65,11 @@
         </repository>
         <repository>
             <id>paper-repo</id>
-            <url>https://repo.papermc.io/maven-public/</url>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
         <repository>
-            <id>aliyun</id>
-            <url>https://maven.aliyun.com/repository/public</url>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
     </repositories>
 
@@ -77,21 +77,21 @@
         <dependency>
             <groupId>org.leavesmc.leaves</groupId>
             <artifactId>leaves-api</artifactId>
-            <version>1.20.6-R0.1-SNAPSHOT</version>
+            <version>1.21.3-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bukkit</artifactId>
-            <version>3.0.2</version>
+            <version>3.1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.bevkon.bukkit</groupId>
             <artifactId>residence</artifactId>
-            <version>5.1.4.3</version>
+            <version>5.1.6.4</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/Residence5.1.5.0.jar</systemPath>
+            <systemPath>${project.basedir}/libs/Residence5.1.6.4.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
