@@ -26,3 +26,12 @@ jobs:
         with:
           name: Leavidence
           path: ./target/
+      - name: Release Leavidence
+        if: github.event_name != 'pull_request'
+        uses: marvinpinto/action-automatic-releases@master
+        with:
+          title: "Leavidence"
+          automatic_release_tag: "1.1"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          files: "./target/Leavidence-1.1.jar"
+          prerelease: false
