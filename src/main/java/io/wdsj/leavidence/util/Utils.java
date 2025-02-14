@@ -9,7 +9,6 @@ public class Utils {
     private Utils() {
     }
 
-
     public static Entity getTargetedEntity(Player player, double maxDistance) {
         RayTraceResult rayTraceResult = player.getWorld().rayTraceEntities(
                 player.getEyeLocation(),
@@ -22,5 +21,4 @@ public class Utils {
         }
         return null;
     }
-
 }
