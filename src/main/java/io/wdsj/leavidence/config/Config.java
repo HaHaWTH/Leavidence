@@ -14,6 +14,8 @@ public class Config {
     private final ConfigFile config;
     private final Plugin plugin;
     public final CheckMode check_mode;
+    public final boolean check_creation;
+    public final String create_failed_message;
     public Config(Plugin plugin, File dataFolder) throws Exception {
         this.plugin = plugin;
         // Load config.yml with ConfigMaster
@@ -27,6 +29,15 @@ public class Config {
                 """
                         Which entity permission should be checked when bot executing actions.
                         Available options: BOT, OWNER"""));
+        this.check_creation = getBoolean("plugin.check-creation", true,
+                """
+                        Whether to check for permission when creating a bot.
+                        If true, the bot will not be created if the player does not have permission to create it.
+                        If false, the bot will be created even if the player does not have permission to create it.""");
+
+        this.create_failed_message = getString("plugin.create-failed-message", "<red>You need move flag to create a bot in this residence!</red>",
+                """
+                        The message that will be sent to the player when the bot creation fails.""");
     }
 
     public void saveConfig() {

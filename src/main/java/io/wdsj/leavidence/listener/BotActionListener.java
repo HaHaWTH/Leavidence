@@ -47,15 +47,17 @@ public class BotActionListener implements Listener {
                 Material itemInHand = stackInHand.getType();
                 var resPlayer = getBotOrOwnerResPlayer(event);
                 if (resPlayer == null) return;
-                if (itemInHand.isBlock() && !resPlayer.canPlaceBlock(block, false)) {
+                var isBlock = itemInHand.isBlock();
+                if (isBlock && !resPlayer.canPlaceBlock(block, false)) {
                     event.hardCancel();
+                    return;
                 }
-                if (!residence.getPermissions().playerHas(resPlayer, Flags.use, false)) {
+                if (!isBlock && !residence.getPermissions().playerHas(resPlayer, Flags.use, false)) {
                     event.hardCancel();
                 }
             }
             case "attack" -> {
-                Entity entity = Utils.getTargetedEntity(bot, 7);
+                Entity entity = Utils.getTargetedEntity(bot, 5);
                 if (entity != null) {
                     ClaimedResidence residence = ResidenceApi.getResidenceManager().getByLoc(entity.getLocation());
                     if (residence != null) {
