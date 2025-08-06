@@ -31,7 +31,7 @@ jobs:
         uses: marvinpinto/action-automatic-releases@master
         with:
           title: "Leavidence"
-          automatic_release_tag: "1.1"
+          automatic_release_tag: "1.2"
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          files: "./target/Leavidence-1.1.jar"
+          files: "./target/Leavidence-1.2.jar"
           prerelease: false
