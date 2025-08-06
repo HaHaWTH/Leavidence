@@ -6,7 +6,7 @@
 
     <groupId>io.wdsj</groupId>
     <artifactId>Leavidence</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
 
     <name>Leavidence</name>
@@ -77,7 +77,7 @@
         </repository>
         <repository>
             <id>cm-repo</id>
-            <url>https://ci.pluginwiki.us/plugin/repository/everything/</url>
+            <url>https://repo.bsdevelopment.org/releases/</url>
         </repository>
     </repositories>
 
@@ -85,7 +85,7 @@
         <dependency>
             <groupId>org.leavesmc.leaves</groupId>
             <artifactId>leaves-api</artifactId>
-            <version>1.21.3-R0.1-SNAPSHOT</version>
+            <version>1.21.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -104,7 +104,7 @@
         <dependency>
             <groupId>com.github.thatsmusic99</groupId>
             <artifactId>ConfigurationMaster-API</artifactId>
-            <version>v2.0.0-rc.2</version>
+            <version>v2.0.0-rc.3</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

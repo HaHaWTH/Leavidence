@@ -20,7 +20,7 @@ public class Config {
         this.plugin = plugin;
         // Load config.yml with ConfigMaster
         this.config = ConfigFile.loadConfig(new File(dataFolder, "config.yml"));
-        config.set("plugin-version", "1.1");
+        config.set("plugin-version", "1.2");
 
         // Pre-structure to force order
         structureConfig();
