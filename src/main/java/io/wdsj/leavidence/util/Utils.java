@@ -1,5 +1,6 @@
 package io.wdsj.leavidence.util;
 
+import org.bukkit.GameMode;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -20,5 +21,12 @@ public class Utils {
             return rayTraceResult.getHitEntity();
         }
         return null;
+    }
+
+    public static double getBlockInteractionDistance(Player player) {
+        return player.getGameMode() == GameMode.CREATIVE ? 5.0D : 4.5D;
+    }
+    public static double getEntityInteractionDistance(Player player) {
+        return player.getGameMode() == GameMode.CREATIVE ? 5.0D : 3.0D;
     }
 }

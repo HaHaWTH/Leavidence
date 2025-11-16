@@ -29,7 +29,7 @@ public class BotActionListener implements Listener {
         var bot = event.getBot();
         switch (event.getActionName().toLowerCase(Locale.ROOT)) {
             case "break" -> {
-                Block block = bot.getTargetBlockExact(5, FluidCollisionMode.NEVER);
+                Block block = bot.getTargetBlockExact((int) Math.round(Utils.getBlockInteractionDistance(bot)), FluidCollisionMode.NEVER);
                 if (block == null) return;
                 ClaimedResidence residence = ResidenceApi.getResidenceManager().getByLoc(block.getLocation());
                 if (residence == null) return;
@@ -39,7 +39,7 @@ public class BotActionListener implements Listener {
                 }
             }
             case "use_on", "use_on_offhand" -> {
-                Block block = bot.getTargetBlockExact(5, FluidCollisionMode.NEVER);
+                Block block = bot.getTargetBlockExact((int) Math.round(Utils.getBlockInteractionDistance(bot)), FluidCollisionMode.NEVER);
                 if (block == null) return;
                 ClaimedResidence residence = ResidenceApi.getResidenceManager().getByLoc(block.getLocation());
                 if (residence == null) return;
@@ -57,7 +57,7 @@ public class BotActionListener implements Listener {
                 }
             }
             case "attack" -> {
-                Entity entity = Utils.getTargetedEntity(bot, 5);
+                Entity entity = Utils.getTargetedEntity(bot, Utils.getEntityInteractionDistance(bot));
                 if (entity != null) {
                     ClaimedResidence residence = ResidenceApi.getResidenceManager().getByLoc(entity.getLocation());
                     if (residence != null) {
@@ -69,7 +69,7 @@ public class BotActionListener implements Listener {
                 }
             }
             case "use_to", "use_to_offhand" -> {
-                Entity entity = Utils.getTargetedEntity(bot, 3);
+                Entity entity = Utils.getTargetedEntity(bot, Utils.getEntityInteractionDistance(bot));
                 if (entity == null) return;
                 ClaimedResidence residence = ResidenceApi.getResidenceManager().getByLoc(entity.getLocation());
                 if (residence == null) return;
